@@ -47,9 +47,7 @@ function App() {
             required
           />
         </div>
-        <button type="submit" disabled={!firstName || !lastName}>
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
       {fullName && <div>Full Name: {fullName}</div>}
     </div>
