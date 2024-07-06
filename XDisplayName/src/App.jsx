@@ -15,12 +15,12 @@ function App() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log("Form submitted without reloading");
     if (firstName.trim() === "" || lastName.trim() === "") {
       return;
     }
     setFullName(`${firstName} ${lastName}`);
-    setFirstName(""); // Clear first name field
-    setLastName(""); // Clear last name field
+    // Do not clear input fields after submission
   };
 
   return (
@@ -47,7 +47,9 @@ function App() {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={!firstName || !lastName}>
+          Submit
+        </button>
       </form>
       {fullName && <div>Full Name: {fullName}</div>}
     </div>
