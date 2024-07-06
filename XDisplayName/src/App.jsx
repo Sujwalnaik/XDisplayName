@@ -58,6 +58,9 @@ function App() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (firstName.trim() === "" || lastName.trim() === "") {
+      return;
+    }
     setFullName(`${firstName} ${lastName}`);
     setFirstName(""); // Clear first name field
     setLastName(""); // Clear last name field
